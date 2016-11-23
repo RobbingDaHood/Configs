@@ -49,13 +49,13 @@ Return
 Return
 
 ;Get intranet info on user
-Numpad0 & Numpad1::
+^Numpad1::
 	InputBox, OutputVar
 	Run, iexplore.exe https://intranet.nykredit.dk/search/Sider/peopleresults.aspx?k=%OutputVar%
 return 
 
 ;HUGO lookup on whatever is selected
-Numpad0 & Numpad2::
+^Numpad2::
 	Send ^c
 	ClipWait
 	Run, iexplore.exe http://nupo/hugo/searchobject.jsp?objname=%Clipboard%
