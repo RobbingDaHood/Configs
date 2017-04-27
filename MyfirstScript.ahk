@@ -1,4 +1,4 @@
-﻿;AutoHotkey script
+;AutoHotkey script
 
 ;For an autohotkey script to interact with any elevated application it has to itself be launched as elevated. 
 ;Numpad0 & Numpad1::   
@@ -61,3 +61,16 @@ return
 	Run, iexplore.exe http://nupo/hugo/searchobject.jsp?objname=%Clipboard%
 return 
 
+^#x::
+^#c::                            ; Text-only cut/copy to ClipBoard
+   Clip0 = %ClipBoardAll%
+   ClipBoard =
+   StringRight x,A_ThisHotKey,1  ; C or X
+   Send ^%x%                     ; For best compatibility: SendPlay
+   ClipWait 2                    ; Wait for text, up to 2s
+   If ErrorLevel
+      ClipBoard = %Clip0%        ; Restore original ClipBoard
+   Else
+      ClipBoard = %ClipBoard%    ; Convert to text
+   VarSetCapacity(Clip0, 0)      ; Free memory 
+Return
