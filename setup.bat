@@ -24,7 +24,7 @@ if exist %1 (
 )
 
 if not exist S: (
-	net use S: \\nkm18t02\projekter-redirect
+	net use S: \\deltedata\projekter
 )
 
 mode con lines=32766 cols=200
