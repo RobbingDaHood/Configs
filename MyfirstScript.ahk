@@ -10,24 +10,24 @@
 ;   Send {Enter}
 
 ;
-; WND+S
+; CTRL+SHIFT+ALT+3
 ;
 ; Search selected logtoken in splunk
 ; 
-#s::
+^!+3::
 	Send ^c
 	ClipWait
 	clip = %clipboard%	
-	
+
 	Run, http://splunk/en-US/app/search/search?q=`"`"%clipboard%`"`"`"&display.page.search.mode=fast
 Return
 
 ;
-; WND+X
+; CTRL+SHIFT+ALT+4
 ;
 ; Copy all the text, paste into notepad++ and format as XML
 ; 
-#x::
+^!+4::
 	Send ^a
 	Send ^c
 	ClipWait
@@ -49,13 +49,15 @@ Return
 Return
 
 ;Get intranet info on user
-^Numpad1::
+;CTRL+SHIFT+ALT+1
+^!+1::
 	InputBox, OutputVar
 	Run, iexplore.exe https://intranet.nykredit.dk/search/Sider/peopleresults.aspx?k=%OutputVar%
 return 
 
 ;HUGO lookup on whatever is selected
-^Numpad2::
+;CTRL+SHIFT+ALT+2
+^!+2::
 	Send ^c
 	ClipWait
 	Run, iexplore.exe http://nupo/hugo/searchobject.jsp?objname=%Clipboard%
@@ -75,6 +77,6 @@ return
    VarSetCapacity(Clip0, 0)      ; Free memory 
 Return
 
-;Make sure escape does not close a window in the chat
+;Make sure escape does not close a window in the Lynch chat
 #IfWinActive ahk_exe lync.exe
 Escape::return
