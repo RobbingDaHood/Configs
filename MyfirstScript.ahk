@@ -74,3 +74,7 @@ return
       ClipBoard = %ClipBoard%    ; Convert to text
    VarSetCapacity(Clip0, 0)      ; Free memory 
 Return
+
+;Make sure escape does not close a window in the chat
+#IfWinActive ahk_exe lync.exe
+Escape::return
