@@ -47,4 +47,5 @@ goto :eof
     echo enviroment
     goto :eof
 
+:eof
 PAUSE

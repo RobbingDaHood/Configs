@@ -40,4 +40,5 @@ CALL ant switchTo%3
     echo enviroment
     goto :eof
 
+:eof
 PAUSE
