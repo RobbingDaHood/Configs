@@ -39,6 +39,5 @@ CALL ant switchTo%3
 	echo target link (branch, tag or trunk)
     echo enviroment
     goto :eof
-
-:eof
+	
 PAUSE

@@ -48,5 +48,4 @@ goto :eof
     echo target env "mvn build target"
     goto :eof
 
-:eof
 PAUSE
