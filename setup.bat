@@ -18,6 +18,13 @@ if not exist %2 (
     goto :eof
 )
 
+set linkPath=%2
+CALL set linkPath=%%linkPath:%1=%%
+if %linkPath%==%2 (
+	echo linkPath: %2 does not contain the targetpath as a substring %1%, this is very likely an error. 
+	goto :BadArguments 
+) 
+
 if exist %1 (
 	echo Removes old link: %1
 	rmdir %1

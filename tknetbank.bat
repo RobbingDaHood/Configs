@@ -17,6 +17,13 @@ if not exist %1 (
 	goto :eof
 )
 
+set tkPath=%1
+set tkPath=%tkPath:tknetbank=%
+if %tkPath%==%1 (
+	echo Parameter 1: %1 does not contain the substring tknetbank, this is very likely an error. 
+	goto :BadArguments 
+) 
+
 if exist tknetbank (
 	echo Removes old link: tknetbank
 	rmdir tknetbank
