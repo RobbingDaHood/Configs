@@ -80,7 +80,7 @@ Return
 ;Print current date and time
 ;CTRL+SHIFT+ALT+5
 ^!+5::
-	FormatTime, Time,, dd/MM/yyyy h:mm tt
+	FormatTime, Time,, dd/MM/yyyy HH:mm tt
 	Send %Time%
 Return
 
