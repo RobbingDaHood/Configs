@@ -84,6 +84,21 @@ Return
 	Send %Time%
 Return
 
+;Media controls, like spotify (On T460p the FN key is SC163::)
+^!+Left::
+	Send   {Media_Prev}
+	Return 
+^!+Right::
+	Send  {Media_Next}
+	Return 
+^!+Up::
+	Send   {Media_Play_Pause}
+	Return 
+
 ;Make sure escape does not close a window in the Lynch chat
 #IfWinActive ahk_exe lync.exe
 Escape::return
+
+
+
+
