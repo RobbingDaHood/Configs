@@ -45,6 +45,7 @@ if %sagPath%==%2 (
 :startupservers
 start startup1.bat xportalen %1 %3 %4
 if not "%~2"=="-" (
+	timout /t 2
 	start startup2.bat sagsstyring %2 %3 %4
 )
 goto :eof
